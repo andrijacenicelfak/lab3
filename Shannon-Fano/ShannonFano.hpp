@@ -30,6 +30,8 @@ class ShannonFano{
     void printCodes();
     void sort();
     void createTree(int beg, int end, SFNode *node);
+    void generateCodeTable(char **niz);
+    void gen(char **niz, char* curr, SFNode *node);
 };
 
 void ShannonFano::loadFromTxtFile(char* fileName){
@@ -62,7 +64,7 @@ void ShannonFano::loadFromTxtFile(char* fileName){
 
     start = new SFNode(0, 0);
     createTree(0, numNodes-1, start);
-
+    generateCodeTable(codes);
     printCodes();
 }
 void ShannonFano::printCodes(){
@@ -92,7 +94,7 @@ void ShannonFano::sort(){
         }
         nodes[i] = nullptr;
     }
-    numNodes = h->size();
+    numNodes = h->getSize();
     int i= numNodes-1;
     while(!h->empty() && i >= 0)
         nodes[i--] = h->popMin();
@@ -131,4 +133,39 @@ void ShannonFano::createTree(int beg, int end, SFNode* node){
         createTree(beg, i, node->left);
         createTree(j, end, node->right);
     }
+}
+
+void ShannonFano::generateCodeTable(char **niz){
+    char *strL = new char[2];
+    char *strR = new char[2];
+    strcpy(strL, "0");
+    strcpy(strR, "1");
+    gen(niz, strL, start->left);
+    gen(niz, strR, start->right);
+    delete[] strL;
+    delete[] strR;
+}
+void ShannonFano::gen(char **niz, char* curr, SFNode *node){
+    if(node == nullptr) return;
+    if(node->info != '\0'){
+        niz[node->info] = new char[strlen(curr+1)];
+        strcpy(niz[node->info], curr);
+    }else{
+        int l = strlen(curr);
+        char *strL = new char[l+2];
+        char *strR = new char[l+2];
+        strcpy(strL, curr);
+        strcpy(strR, curr);
+        strL[l] = '0';
+        strL[l+1] = '\0';
+        strR[l] = '1';
+        strR[l+1] = '\0';
+
+        gen(niz, strL, node->left);
+        gen(niz, strR, node->right);
+
+        delete[] strL;
+        delete[] strR;
+    }
+
 }

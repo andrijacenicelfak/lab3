@@ -26,7 +26,7 @@ class MinHeap{
             arr[i]->print();
         }
     }
-    int size(){return tr;}
+    int getSize(){return tr;}
 };
 
 void MinHeap::push(SFNode *node){
