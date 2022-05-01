@@ -1,0 +1,18 @@
+Naziv fajla : .\text\100.txt
+Vreme potrebno za kodiranje : 10 ms
+-----------------------------------------------------
+Naziv fajla : .\text\1000.txt
+Vreme potrebno za kodiranje : 23 ms
+-----------------------------------------------------
+Naziv fajla : .\text\10000.txt
+Vreme potrebno za kodiranje : 23 ms
+-----------------------------------------------------
+Naziv fajla : .\text\100000.txt
+Vreme potrebno za kodiranje : 22 ms
+-----------------------------------------------------
+Naziv fajla : .\text\1000000.txt
+Vreme potrebno za kodiranje : 74 ms
+-----------------------------------------------------
+Naziv fajla : .\text\10000000.txt
+Vreme potrebno za kodiranje : 483 ms
+-----------------------------------------------------

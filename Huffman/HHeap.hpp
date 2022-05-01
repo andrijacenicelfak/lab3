@@ -4,7 +4,7 @@
 #include "MinHeap.hpp"
 using namespace std;
 class HHeap{
-    void gen(int* niz, int curr, HNode* node);
+    void gen(char** niz, char *curr, HNode* node);
     public:
     HNode *start;
 
@@ -17,44 +17,64 @@ class HHeap{
 
     void generateHHeapFromMinHeap(MinHeap *h);
 
-    void generateCodeTable(int* niz);
+    void generateCodeTable(char** niz);
 
 
 };
 
 void HHeap::generateHHeapFromMinHeap(MinHeap *h){
-    HNode *l, *r, *old, *novo;
+    HNode *l, *r, *novo;
     l = h->popMin();
     r = h->popMin();
     start = new HNode('\0', l->freq + r->freq);
     start->left = l;
     start->right = r;
-    old = start;
     while(!h->empty()){
-        novo = h->popMin();
-        if(novo->freq > old->freq){
-            l = novo;
-            r = old;
-        }else{
-            l = old;
-            r = novo;
-        }
+        /*
+        cout << "--------------------------------------------\n";
+        start->printAll(0);
+        /**/
+        h->push(start);
+
+        l = h->popMin();
+        r = h->popMin();
         start = new HNode('\0', l->freq + r->freq);
         start->left = l;
         start->right = r;
-        old = start;
     }
 }
 
-void HHeap::generateCodeTable(int * niz){
-    gen(niz,0, start->left);
-    gen(niz,1, start->right);
+void HHeap::generateCodeTable(char **niz){
+    char *strL = new char[2];
+    char *strR = new char[2];
+    strcpy(strL, "0");
+    strcpy(strR, "1");
+    gen(niz, strL, start->left);
+    gen(niz, strR, start->right);
+    delete[] strL;
+    delete[] strR;
 }
-void HHeap::gen(int *niz, int curr, HNode *node){
+void HHeap::gen(char **niz, char* curr, HNode *node){
+    if(node == nullptr) return;
     if(node->info != '\0'){
-        niz[node->info] = curr;
+        niz[node->info] = new char[strlen(curr+1)];
+        strcpy(niz[node->info], curr);
     }else{
-        gen(niz, curr*2, node->left);
-        gen(niz, (curr *2) + 1, node->right);
+        int l = strlen(curr);
+        char *strL = new char[l+2];
+        char *strR = new char[l+2];
+        strcpy(strL, curr);
+        strcpy(strR, curr);
+        strL[l] = '0';
+        strL[l+1] = '\0';
+        strR[l] = '1';
+        strR[l+1] = '\0';
+
+        gen(niz, strL, node->left);
+        gen(niz, strR, node->right);
+
+        delete[] strL;
+        delete[] strR;
     }
+
 }

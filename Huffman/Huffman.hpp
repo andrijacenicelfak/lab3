@@ -7,7 +7,7 @@
 using namespace std;
 class Huffman{
     char* txt, *codedTxt;
-    int* codes;
+    char** codes;
     int txtLenght;
     MinHeap *minHeap;
     HHeap *hHeap;
@@ -16,14 +16,20 @@ class Huffman{
     Huffman(){
         minHeap = new MinHeap();
         hHeap = new HHeap();
+        codes = new char*[256];
+        for(int i = 0; i < 256; i++)
+            codes[i] = nullptr;
     }
     ~Huffman(){
         if(txt != nullptr)
             delete[] txt;
         if(codedTxt != nullptr)
             delete[] codedTxt;
-        if(codes != nullptr)
+        if(codes != nullptr){
+            for(int i = 0; i < 256; i++)
+                delete[] codes[i];
             delete[] codes;
+        }
         if(minHeap != nullptr)
             delete minHeap;
         if(hHeap != nullptr)
@@ -53,7 +59,7 @@ void Huffman::loadFromTxtFile(char* fileName){
         nodes[i] = new HNode(i, 0);
     //cout << "Napravio cvorove!\n";
     //Pri pojavljivanju karaktera povecavamo frekvenciju pojavljivanja
-    for(size_t i = 0; i < size; i++)
+    for(size_t i = 0; i < size-1; i++)
         nodes[txt[i]]->freq++;
     //cout << "Podesio freq!\n";
     //Ubacujemo svaki karakter koji se nije javio u minHeap
@@ -62,16 +68,18 @@ void Huffman::loadFromTxtFile(char* fileName){
             minHeap->push(nodes[i]);
     }
     //minHeap->printNodes();
-    cout << "Dodao na minHeap!\n";
+    //cout << "Dodao na minHeap!\n";
     //Generisemo Huffman-ovo stablo i kodove
     hHeap->generateHHeapFromMinHeap(minHeap);
-    cout << "Generisao HHeap!\n";
+    //cout << "Generisao HHeap!\n";
     hHeap->generateCodeTable(codes);
-    cout << " GOTOVO!\n";
+    //cout << " GOTOVO!\n";
+    printCodes();
 
 }
 void Huffman::printCodes(){
     for(int i = 0; i < 256; i++){
-        cout << i << " : " << codes[i] << endl;
+        if(codes[i] != nullptr)
+            cout << (char)i << " : " << codes[i] << endl;
     }
 }
