@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <math.h>
 
 #include <chrono>
 #include <ctime>
@@ -25,11 +26,13 @@ int main(int argc, char* argv[]){
     ofstream f(argv[2], ios::app);
     auto start = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
 
-    h->loadFromTxtFile(argv[1]);    
+    h->loadFromTxtFile(argv[1]);
 
     auto mills = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count() - start;
+    double p = h->poboljsanje();
     f   << "Naziv fajla : " << argv[1] << endl
         << "Vreme potrebno za kodiranje : " << mills  << " ms"<<endl
+        << "Velicina fajla posle kodiranja : " << p << "%"<<endl
         << "-----------------------------------------------------" << endl;
     //h->printCodes();
     delete h;
