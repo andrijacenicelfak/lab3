@@ -28,7 +28,7 @@ class MinHeap{
     }
 };
 
-void MinHeap::push(HNode *node){//NE VA:LJAAAA
+void MinHeap::push(HNode *node){
     int i = tr++, p = (i - 1) / 2;
     arr[i] = node;
     while(arr[p]->freq > arr[i]->freq && i != p){
@@ -39,23 +39,32 @@ void MinHeap::push(HNode *node){//NE VA:LJAAAA
         i = p;
         p = (i - 1) / 2;
     }
+    /*
+    cout << "Dodat node  : " << node->info << " :: " << node->freq << " \n";
+    this->printNodes();
+    /**/
 }
 HNode* MinHeap::popMin(){
     HNode* ret = arr[0];
     tr--;
     arr[0] = arr[tr];
+    arr[tr] = nullptr;
     heapify_down(0);
-    ret->print();
+    /*
+    cout << "Izbacen node  : " << ret->info << " :: " << ret->freq << " \n";
+    this->printNodes();
+    /**/
     return ret;
 }
 void MinHeap::heapify_down(int i){ // NZM STO NECE OVOOOO!
+
     int left = (2*i + 1);
     int right = (2*i + 2);
     int smallest = i;
-    if (left < size && arr[left]->freq < arr[i]->freq) {
+    if (left < tr && arr[left]->freq < arr[i]->freq) {
         smallest = left;
     }
-    if (right < size && arr[right]->freq < arr[smallest]->freq) {
+    if (right < tr && arr[right]->freq < arr[smallest]->freq) {
         smallest = right;
     }
     if (smallest != i){

@@ -23,4 +23,11 @@ class HNode{
         if(right != nullptr)
             right->print();*/
     }
+    void printAll(){
+        cout << ((info == 0) ? '@' : info) << " : " << freq << endl;
+        if(left != nullptr)
+            left->print();
+        if(right != nullptr)
+            right->print();
+    }
 };

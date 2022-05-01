@@ -43,7 +43,7 @@ void HHeap::generateHHeapFromMinHeap(MinHeap *h){
         start->left = l;
         start->right = r;
         old = start;
-    }   
+    }
 }
 
 void HHeap::generateCodeTable(int * niz){

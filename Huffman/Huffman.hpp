@@ -61,7 +61,7 @@ void Huffman::loadFromTxtFile(char* fileName){
         if(nodes[i]->freq > 0)
             minHeap->push(nodes[i]);
     }
-    minHeap->printNodes();
+    //minHeap->printNodes();
     cout << "Dodao na minHeap!\n";
     //Generisemo Huffman-ovo stablo i kodove
     hHeap->generateHHeapFromMinHeap(minHeap);
