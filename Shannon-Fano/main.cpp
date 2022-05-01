@@ -30,7 +30,7 @@ int main(int argc, char* argv[]){
     double p = sf->poboljsanje(); 
     f   << "Naziv fajla : " << argv[1] << endl
         << "Vreme potrebno za kodiranje : " << mills  << " ms"<<endl
-        << "Velicina fajla posle kodiranja : " << p << "%"<<endl
+        << "Poboljsanje : " << p << "%"<<endl
         << "-----------------------------------------------------" << endl;
 
     delete sf;

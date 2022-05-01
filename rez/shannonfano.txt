@@ -1,0 +1,28 @@
+Naziv fajla : .\text\test.txt
+Vreme potrebno za kodiranje : 16 ms
+Poboljsanje : 53%
+-----------------------------------------------------
+Naziv fajla : .\text\100.txt
+Vreme potrebno za kodiranje : 15 ms
+Poboljsanje : 48%
+-----------------------------------------------------
+Naziv fajla : .\text\1000.txt
+Vreme potrebno za kodiranje : 47 ms
+Poboljsanje : 47%
+-----------------------------------------------------
+Naziv fajla : .\text\10000.txt
+Vreme potrebno za kodiranje : 54 ms
+Poboljsanje : 47%
+-----------------------------------------------------
+Naziv fajla : .\text\100000.txt
+Vreme potrebno za kodiranje : 55 ms
+Poboljsanje : 47%
+-----------------------------------------------------
+Naziv fajla : .\text\1000000.txt
+Vreme potrebno za kodiranje : 131 ms
+Poboljsanje : 47%
+-----------------------------------------------------
+Naziv fajla : .\text\10000000.txt
+Vreme potrebno za kodiranje : 930 ms
+Poboljsanje : 47%
+-----------------------------------------------------

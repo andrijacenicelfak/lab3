@@ -62,6 +62,12 @@ void ShannonFano::loadFromTxtFile(char* fileName){
 
     sort(); // Izbacimo sve cvorove u niz sortirani od najveceg do najmanjeg
 
+    //cout << "Uspesan sort!\n";
+
+    /*
+    for(int i = 0; i < numNodes; i++)
+        cout << nodes[i]->info<< " : " << nodes[i]->freq<<"\n";
+    /**/
     start = new SFNode(0, 0);
     createTree(0, numNodes-1, start);
     generateCodeTable(codes);
@@ -112,7 +118,7 @@ void ShannonFano::createTree(int beg, int end, SFNode* node){
         nodes[end] = nullptr;
     }else{ // vise noda ostalo
         int fl = 0, fr = 0;
-        int i = 0, j = end;
+        int i = beg, j = end;
         int last = 0;
         while(i < j){
             if(fl <= fr){
@@ -123,9 +129,6 @@ void ShannonFano::createTree(int beg, int end, SFNode* node){
                 last = 1;
             }
         }
-        //j++; // i -- => ili da se nadje nekako efikasnije resenje da se vidi sta je bolje? mozda da se vidi da li je razlika veca na jedan ili drugi nacin?
-        //(abs(fl - fr + nodes[j+1]->freq) < abs(fl - fr - nodes[i-1]->freq) ? j++ : i--);
-        //mozda ovako?
         if(last) j++; else i--;
 
         node->left = new SFNode(0,0);

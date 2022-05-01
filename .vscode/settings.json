@@ -3,6 +3,7 @@
         "iosfwd": "cpp",
         "ctime": "cpp",
         "chrono": "cpp",
-        "cstdlib": "cpp"
+        "cstdlib": "cpp",
+        "iostream": "cpp"
     }
 }
