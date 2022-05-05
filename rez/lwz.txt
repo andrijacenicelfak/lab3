@@ -1,0 +1,36 @@
+Naziv fajla : .\text\100.txt
+Vreme potrebno za kodiranje : 1 ms
+Broj byte pre kodiranja : 100
+Broj byte posle kodiranja : 336
+Nova velicina fajla : 336%
+-----------------------------------------------------
+Naziv fajla : .\text\1000.txt
+Vreme potrebno za kodiranje : 4 ms
+Broj byte pre kodiranja : 1000
+Broj byte posle kodiranja : 2180
+Nova velicina fajla : 218%
+-----------------------------------------------------
+Naziv fajla : .\text\10000.txt
+Vreme potrebno za kodiranje : 24 ms
+Broj byte pre kodiranja : 10000
+Broj byte posle kodiranja : 12980
+Nova velicina fajla : 129.8%
+-----------------------------------------------------
+Naziv fajla : .\text\100000.txt
+Vreme potrebno za kodiranje : 187 ms
+Broj byte pre kodiranja : 100000
+Broj byte posle kodiranja : 68908
+Nova velicina fajla : 68.908%
+-----------------------------------------------------
+Naziv fajla : .\text\1000000.txt
+Vreme potrebno za kodiranje : 1702 ms
+Broj byte pre kodiranja : 1000000
+Broj byte posle kodiranja : 384912
+Nova velicina fajla : 38.4912%
+-----------------------------------------------------
+Naziv fajla : .\text\10000000.txt
+Vreme potrebno za kodiranje : 21631 ms
+Broj byte pre kodiranja : 10000000
+Broj byte posle kodiranja : 1567148
+Nova velicina fajla : 15.6715%
+-----------------------------------------------------

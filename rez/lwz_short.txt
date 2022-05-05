@@ -1,0 +1,37 @@
+Naziv fajla : .\text\100.txt
+Vreme potrebno za kodiranje : 1 ms
+Broj byte pre kodiranja : 100
+Broj byte posle kodiranja : 168
+Nova velicina fajla : 168%
+-----------------------------------------------------
+Naziv fajla : .\text\1000.txt
+Vreme potrebno za kodiranje : 0 ms
+Broj byte pre kodiranja : 1000
+Broj byte posle kodiranja : 1090
+Nova velicina fajla : 109%
+-----------------------------------------------------
+Naziv fajla : .\text\10000.txt
+Vreme potrebno za kodiranje : 28 ms
+Broj byte pre kodiranja : 10000
+Broj byte posle kodiranja : 6490
+Nova velicina fajla : 64.9%
+-----------------------------------------------------
+Naziv fajla : .\text\100000.txt
+Vreme potrebno za kodiranje : 190 ms
+Broj byte pre kodiranja : 100000
+Broj byte posle kodiranja : 34454
+Nova velicina fajla : 34.454%
+-----------------------------------------------------
+Naziv fajla : .\text\1000000.txt
+Vreme potrebno za kodiranje : 1747 ms
+Broj byte pre kodiranja : 1000000
+Broj byte posle kodiranja : 192456
+Nova velicina fajla : 19.2456%
+-----------------------------------------------------
+//Posto se koristi unsigned short a kod prevazilazi 65535 posle se ne dekodira lepo, radi samo za manje fajlove
+Naziv fajla : .\text\10000000.txt
+Vreme potrebno za kodiranje : 22670 ms
+Broj byte pre kodiranja : 10000000
+Broj byte posle kodiranja : 783574
+Nova velicina fajla : 7.83574%
+-----------------------------------------------------

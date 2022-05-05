@@ -26,3 +26,7 @@ Naziv fajla : .\text\10000000.txt
 Vreme potrebno za kodiranje : 930 ms
 Poboljsanje : 47%
 -----------------------------------------------------
+Naziv fajla : .\text\10000000.txt
+Vreme potrebno za kodiranje : 506 ms
+Poboljsanje : 47%
+-----------------------------------------------------

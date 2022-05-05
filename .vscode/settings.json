@@ -4,6 +4,7 @@
         "ctime": "cpp",
         "chrono": "cpp",
         "cstdlib": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "vector": "cpp"
     }
 }
