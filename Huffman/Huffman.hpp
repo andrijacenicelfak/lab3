@@ -35,25 +35,25 @@ class Huffman{
         if(hHeap != nullptr)
             delete hHeap;
     }
-    void loadFromTxtFile(char* fileName);
-    void writeToFileCoded(char* fileName);
+    void encode(char* tekst, int size);
+    void decode(char* fileName);
     double poboljsanje();
     void printCodes();
+    int size(){
+        double num = 0;
+        int lenghts[256];
+        for(int i = 0; i < 256; i++)
+            lenghts[i] = codes[i] == nullptr ? 0 : strlen(codes[i]);
+        for(int i = 0; i < txtLenght; i++){
+            num += lenghts[txt[i]];
+        }
+        return ceil(num/8.0);
+    }
 };
 
-void Huffman::loadFromTxtFile(char* fileName){
-    //cout << "Ucitavam iz fajla \n";
-    //deo za ucitavanje
-    ifstream f(fileName);
-    f.seekg(0, f.end);
-    size_t size = f.tellg();
-    size += 1;
+void Huffman::encode(char* tekst, int size){
     txtLenght = size;
-    txt = new char[size];
-    f.seekg(0, f.beg);
-    f.get(txt, size);
-    txt[size] = '\0';
-    f.close();
+    this->txt = tekst;
     //cout << "Ucitano!\n";
     //Pravimo cvorove za sve karaktere
     HNode **nodes = new HNode*[256];
@@ -77,7 +77,6 @@ void Huffman::loadFromTxtFile(char* fileName){
     hHeap->generateCodeTable(codes);
     //cout << " GOTOVO!\n";
 
-    printCodes();
 }
 void Huffman::printCodes(){
     for(int i = 0; i < 256; i++){

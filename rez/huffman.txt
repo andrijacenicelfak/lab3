@@ -1,28 +1,30 @@
-Naziv fajla : .\text\test.txt
-Vreme potrebno za kodiranje : 9 ms
-Poboljsanje : 58%
------------------------------------------------------
 Naziv fajla : .\text\100.txt
-Vreme potrebno za kodiranje : 12 ms
-Poboljsanje : 50%
+Vreme potrebno za kodiranje : 0 ms
+Broj byte pre kodiranja : 101
+Broj byte posle kodiranja : 52
+Nova velicina fajla : 51.4851%
 -----------------------------------------------------
 Naziv fajla : .\text\1000.txt
-Vreme potrebno za kodiranje : 21 ms
-Poboljsanje : 47%
+Vreme potrebno za kodiranje : 1 ms
+Broj byte pre kodiranja : 1001
+Broj byte posle kodiranja : 532
+Nova velicina fajla : 53.1469%
 -----------------------------------------------------
 Naziv fajla : .\text\10000.txt
-Vreme potrebno za kodiranje : 21 ms
-Poboljsanje : 47%
+Vreme potrebno za kodiranje : 0 ms
+Broj byte pre kodiranja : 10001
+Broj byte posle kodiranja : 5324
+Nova velicina fajla : 53.2347%
 -----------------------------------------------------
 Naziv fajla : .\text\100000.txt
-Vreme potrebno za kodiranje : 29 ms
-Poboljsanje : 47%
+Vreme potrebno za kodiranje : 1 ms
+Broj byte pre kodiranja : 100001
+Broj byte posle kodiranja : 53232
+Nova velicina fajla : 53.2315%
 -----------------------------------------------------
 Naziv fajla : .\text\1000000.txt
-Vreme potrebno za kodiranje : 76 ms
-Poboljsanje : 47%
------------------------------------------------------
-Naziv fajla : .\text\10000000.txt
-Vreme potrebno za kodiranje : 547 ms
-Poboljsanje : 47%
+Vreme potrebno za kodiranje : 3 ms
+Broj byte pre kodiranja : 1000001
+Broj byte posle kodiranja : 532313
+Nova velicina fajla : 53.2312%
 -----------------------------------------------------

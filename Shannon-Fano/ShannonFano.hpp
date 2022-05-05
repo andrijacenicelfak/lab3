@@ -24,7 +24,6 @@ class ShannonFano{
         nodes = new SFNode*[256];
         
     }
-    void loadFromTxtFile(char* fileName);
     void writeToFileCoded(char* fileName);
     double poboljsanje();
     void printCodes();
@@ -32,29 +31,25 @@ class ShannonFano{
     void createTree(int beg, int end, SFNode *node);
     void generateCodeTable(char **niz);
     void gen(char **niz, char* curr, SFNode *node);
+    void encode(char* tekst, int size);
+    int size(){
+        double num = 0;
+        int lenghts[256];
+        for(int i = 0; i < 256; i++)
+            lenghts[i] = codes[i] == nullptr ? 0 : strlen(codes[i]);
+        for(int i = 0; i < txtLenght; i++){
+            num += lenghts[txt[i]];
+        }
+        return ceil(num/8.0);
+    }
 };
-
-void ShannonFano::loadFromTxtFile(char* fileName){
-    //cout << "Ucitavam iz fajla \n";
-    //deo za ucitavanje
-    ifstream f(fileName);
-    f.seekg(0, f.end);
-    size_t size = f.tellg();
-    size += 1;
+void ShannonFano::encode(char* tekst, int size){
+    txt = tekst;
     txtLenght = size;
-    txt = new char[size];
-    f.seekg(0, f.beg);
-    f.get(txt, size);
-    txt[size] = '\0';
-    f.close();
-    //cout << "Ucitano!\n";
-    //Pravimo cvorove za sve karaktere
-    /**/
+    
     for(int i = 0; i < 256; i++)
         nodes[i] = new SFNode(i, 0);
-    /**/
-    //cout << "Napravio cvorove!\n";
-    //Pri pojavljivanju karaktera povecavamo frekvenciju pojavljivanja
+
     for(size_t i = 0; i < size-1; i++)
         nodes[txt[i]]->freq++;
     //cout << "Podesio freq!\n";
@@ -63,15 +58,9 @@ void ShannonFano::loadFromTxtFile(char* fileName){
     sort(); // Izbacimo sve cvorove u niz sortirani od najveceg do najmanjeg
 
     //cout << "Uspesan sort!\n";
-
-    /*
-    for(int i = 0; i < numNodes; i++)
-        cout << nodes[i]->info<< " : " << nodes[i]->freq<<"\n";
-    /**/
     start = new SFNode(0, 0);
     createTree(0, numNodes-1, start);
     generateCodeTable(codes);
-    printCodes();
 }
 void ShannonFano::printCodes(){
     for(int i = 0; i < 256; i++){
